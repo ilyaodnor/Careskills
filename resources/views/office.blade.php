@@ -17,7 +17,7 @@
     </style>
     <main>
         <div class="patient">
-            <img src="{{asset('images/old-man.png') }}" alt="">
+            <img src="{{asset('images/old-man.png') }} " alt="" class = "patient-image">
         </div>
     </main>
 </body>

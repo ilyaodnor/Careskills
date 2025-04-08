@@ -13,5 +13,9 @@ main{
 .patient{
     position: absolute;
     width:600px;
-    margin:auto;
+    margin:auto;;
+}
+.patient-image{
+    width: 100%;
+    height: auto;
 }
