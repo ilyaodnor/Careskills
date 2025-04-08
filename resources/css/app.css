@@ -2,17 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+
 main {
-    @apply flex justify-center items-end h-screen;
-    font-family: 'Futura', sans-serif;
+    @apply flex justify-center items-end h-screen relative;
+}
+.patient {
+    @apply absolute w-auto m-auto;
 }
 
-.patient {
-    position: absolute;
-    width: 575px;
+.patient-img {
+    @apply h-[800px];
+}
+
+.items-box {
+    @apply fixed bottom-2 left-[10%] w-[80%] h-[10%]
+    grid grid-flow-col items-center justify-start gap-8
+    bg-white border border-gray-800 rounded-2xl shadow-md
+    px-8 opacity-80;}
+
+.items-box img {
+    @apply w-[80px] h-[80px] cursor-pointer transition duration-300 ease-in-out relative opacity-100;
+}
+
+.items-box img:hover {
+    @apply border-gray-500;
+}
+
+.items-box img::after {
+    content: attr(alt);
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.items-box img:hover::after {
+    opacity: 1;
 }
 
 .dialogue {
