@@ -13,12 +13,17 @@
         body{
             background-image: url('{{ asset('images/background.png') }}');
             background-size: cover;
+            overflow: hidden;
         }
     </style>
     <main>
+
         <div class="patient">
-            <img src="{{asset('images/old-man.png') }}" alt="">
+            <img src="{{asset('images/old-man.png') }}" alt="" class="patient-img">
         </div>
+
     </main>
+    <x-items-box />
+
 </body>
 </html>
