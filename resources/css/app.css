@@ -2,20 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-main{
+main {
+    @apply flex justify-center items-end h-screen;
+    font-family: 'Futura', sans-serif;
+}
+
+.patient {
+    position: absolute;
+    width: 575px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.dialogue {
+    position: absolute;
+    right: 175px;
+    bottom: 500px;
+    display: flex;
+    max-width: 350px;
+    min-width: 200px;
+}
+
+.dialogue > .dialogue-box {
+    background-color: white;
+    font-size: 18px;
+    max-height: 350px;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    height: 100vh;
-
+    align-items: flex-start;
+    text-align: center;
+    overflow: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.patient{
+.dialogue-arrow {
     position: absolute;
-    width:600px;
-    margin:auto;;
+    bottom: -6px;
+    left: -10px;
+    transform: rotate(45deg);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid white;
+    z-index: 1;
 }
-.patient-image{
+
+.answer {
+    position: absolute;
+    bottom: 100px;
+    right: 170px;
+    font-size: 14px;
+    padding: 20px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 350px;
+    min-width: 350px;
+    max-height: 380px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    word-wrap: break-word;
+
+}
+
+.answer-option {
+    background-color: #4169e1;
+    color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     width: 100%;
-    height: auto;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.answer-option:hover {
+    background-color: #3258a8;
 }
