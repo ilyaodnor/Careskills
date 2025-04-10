@@ -23,25 +23,19 @@
         <img src="{{ asset('images/old-man.png') }}" alt="Old man">
     </div>
 
-    <div class="dialogue">
-        <div class="dialogue-arrow"></div>
-        <div class="dialogue-box">
-            <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem. lorem</i>
+    <div class="dialogue-wrapper">
+
+        <div class="dialogue">
+            <div class="dialogue-box">lorum ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias aliquid amet animi</div>
+            <div class="dialogue-arrow"></div>
+        </div>
+        <div class="answer">
+            <div class="answer-option">  lorum ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias aliquid amet animi</div>
+            <div class="answer-option">  lorum ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias aliquid amet animi</div>
+            <div class="answer-option">  lorum ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias aliquid amet animi</div>
         </div>
     </div>
-
-    <div class="answer">
-        <div class="answer-option">
-            1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa cupiditate exercitationem facilis harum illum ipsam maxime mollitia nam neque nisi praesentium quam ratione, repellat saepe temporibus, totam voluptatem voluptates?
-        </div>
-        <div class="answer-option">
-            2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis incidunt itaque iusto laboriosam
-                maxime minus, nobis praesentium. Assumenda at doloribus, ducimus esse nostrum quibusdam repellat
-                repellendus suscipit vero vitae! Doloribus!
-        </div>
-
-
-    </div>
+    <x-items-box />
 </main>
 </body>
 </html>

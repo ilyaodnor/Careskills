@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
 main {
     @apply flex justify-center items-end h-screen relative;
+    font-family: 'Futura', sans-serif;
 }
+
 .patient {
-    @apply absolute w-auto m-auto;
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
 }
 
 .patient-img {
@@ -18,7 +23,8 @@ main {
     @apply fixed bottom-2 left-[10%] w-[80%] h-[10%]
     grid grid-flow-col items-center justify-start gap-8
     bg-white border border-gray-800 rounded-2xl shadow-md
-    px-8 opacity-80;}
+    px-8 opacity-80;
+}
 
 .items-box img {
     @apply w-[80px] h-[80px] cursor-pointer transition duration-300 ease-in-out relative opacity-100;
@@ -30,6 +36,7 @@ main {
 
 .items-box img::after {
     content: attr(alt);
+    position: absolute;
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
@@ -48,10 +55,18 @@ main {
     opacity: 1;
 }
 
-.dialogue {
+.dialogue-wrapper {
     position: absolute;
-    right: 175px;
-    bottom: 500px;
+    right: 170px;
+    bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.dialogue {
+    position: relative;
     display: flex;
     max-width: 350px;
     min-width: 200px;
@@ -59,7 +74,7 @@ main {
 
 .dialogue > .dialogue-box {
     background-color: white;
-    font-size: 18px;
+    font-size: 15px;
     max-height: 350px;
     border-radius: 20px;
     padding: 20px;
@@ -75,9 +90,9 @@ main {
 
 .dialogue-arrow {
     position: absolute;
-    bottom: -6px;
-    left: -10px;
-    transform: rotate(45deg);
+    bottom: -6.5px;
+    left: 4.8%;
+    transform: translateX(-90%) rotate(45deg);
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
@@ -87,10 +102,8 @@ main {
 }
 
 .answer {
-    position: absolute;
-    bottom: 100px;
-    right: 170px;
-    font-size: 14px;
+    position: static;
+    font-size: 13px;
     padding: 20px;
     background-color: cornflowerblue;
     color: white;
@@ -106,7 +119,6 @@ main {
     box-sizing: border-box;
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
-
 }
 
 .answer-option {
