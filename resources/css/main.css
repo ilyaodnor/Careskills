@@ -1,0 +1,63 @@
+.StartButton{
+    position: absolute;
+    top: 70%;
+    left: 32%;
+    width: 560px;
+    height: 64px;
+    background-color: #32e832;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.StartButton {
+    position: absolute;
+    top: 70%;
+    left: 32%;
+    width: 560px;
+    height: 64px;
+    background-color: #32e832;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    overflow: visible;
+    transition: box-shadow 0.6s ease;
+}
+
+.StartButton:hover {
+    box-shadow: 0 0 20px rgba(50, 232, 50, 0.7);
+}
+
+/* Стили для звездочек */
+.star {
+    position: absolute;
+    font-size: 1.2rem;
+    color: yellow;
+    pointer-events: none;
+    animation: fly-star 1s ease-out forwards;
+    opacity: 1;
+}
+
+/* Анимация полёта звездочек */
+@keyframes fly-star {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        /* Псевдопеременные, задаваемые динамически через JS */
+        transform: translate(var(--translateX), var(--translateY)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.patient img {
+    width: 540px;
+    height: auto;
+    position: absolute;
+    top: 3.8%;
+    left: 32.7%;
+}
