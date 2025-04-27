@@ -336,3 +336,11 @@ main {
     background-color: white;
 }
 
+footer{
+    background-color: #955d5d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+}
