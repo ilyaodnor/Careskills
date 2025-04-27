@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 main {
-    @apply flex justify-center items-end h-screen relative;
     font-family: 'Futura', sans-serif;
 }
 
 .patient {
     position: absolute;
-    width: 800px;
+    width: 600px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
