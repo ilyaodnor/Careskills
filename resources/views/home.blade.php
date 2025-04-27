@@ -18,40 +18,55 @@
     <a class="logo" href="{{ route('home') }}">Da Vinci: Careskills</a>
 </div>
 
-<h1 class="header-players__statistic">Top Players:</h1>
 <main>
 
     <header>
         <div class="main-containers">
-            <ol class="players__statistic">
+            <div class="players__statistic">
+
+                <h1 class="header-players__statistic">Top Players:</h1>
+                <ol>
                 <li class="player-statistic">
                     <p class="rank-circle gold" style="background: url('{{ asset("CareskillsAssets/Textures/gold.jpg") }}');">1</p>
                     <div class="player__info">
-                        <span>Player:</span>
-                        <p>|XP: 2000</p>
+                        <p class="players-name">Player: Lev</p>
+                        <p class="players-xp">|XP: 2133</p>
                     </div>
                 </li>
 
                 <li class="player-statistic">
                     <p class="rank-circle silver" style="background: url('{{ asset("CareskillsAssets/Textures/silver.jpg") }}');">2</p>
-                    <span>Player:</span>
+                    <div class="player__info">
+                        <p class="players-name">Player: Ilya</p>
+                        <p class="players-xp">|XP: 2111</p>
+                    </div>
                 </li>
 
                 <li class="thirdly-player-position">
                     <p class="rank-circle bronze" style="background: url('{{ asset("CareskillsAssets/Textures/bronze.jpg") }}');">3</p>
-                    <span>Player:</span>
+                    <div class="player__info">
+                        <p class="players-name">Player: David</p>
+                        <p class="players-xp">|XP: 1729</p>
+                    </div>
                 </li>
 
                 <li class="else-players">
                     <p class="rank-circle gray">4</p>
-                    <span>Player:</span>
+                    <div class="player__info">
+                        <p class="players-name">Player: Vasya</p>
+                        <p class="players-xp">|XP: 900</p>
+                    </div>
                 </li>
 
                 <li class="else-players">
                     <p class="rank-circle gray">5</p>
-                    <span>Player:</span>
+                    <div class="player__info">
+                        <p class="players-name">Player: Grisha</p>
+                        <p class="players-xp">|XP: 123</p>
+                    </div>
                 </li>
-            </ol>
+                </ol>
+            </div>
 
 
             <div class="game__container">

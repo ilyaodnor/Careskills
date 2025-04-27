@@ -22,6 +22,9 @@ main {
     @apply flex justify-center items-end h-screen relative;
     font-family: 'Futura', sans-serif;
     user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .logo-container{
     display: flex;
@@ -53,18 +56,6 @@ main {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
-.header-players__statistic{
-    display: flex;
-    position: relative;
-    padding: 5px;
-    width: 600px;
-    background-color: white;
-    justify-content: center;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    left: 9.4vw;
-
-}
 .main-containers {
     position: relative;
     left: 0;
@@ -83,15 +74,24 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.header-players__statistic{
+    display: flex;
+    background-color: #fbe5e5;
+    justify-content: center;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+}
 .players__statistic {
     grid-column: span 1;
     grid-row: span 1;
     width: 600px;
     height: 400px;
-    list-style-type: decimal;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 @keyframes fadeInUp {
     from {
@@ -107,9 +107,9 @@ main {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     width: 100%;
-    height: 15%;
+    height: 50px;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -123,8 +123,7 @@ main {
     box-shadow: 0 0 10px #e1e1e1;
 }
 .players__statistic li p{
-    font-weight: bold;
-    /*padding: 5px 10px;*/
+    padding: 5px 10px;
     margin: 0;
     border-radius: 5px;
 }
@@ -153,22 +152,23 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+.players-name{
+    font-size: 1.5rem;
 
+    color: #333;
+    margin-left: 20px;
 }
-.player__info span{
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-.player__info p{
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-left: 120px;
-}
+.players-xp{
+    font-size: 1.5rem;
+    color: #333;
 
+   }
 
 .rank-circle {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 0.5rem;
     background-color: #333;
     color: white;
