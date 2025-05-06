@@ -32,7 +32,6 @@ return new class extends Migration
             $table->float('temperature_c');
             $table->integer('oxygen_saturation');
             $table->integer('pain')->nullable();
-            $table->string('avatar');
             $table->timestamps();
         });
     }

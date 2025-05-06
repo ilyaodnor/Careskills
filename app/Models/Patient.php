@@ -25,8 +25,7 @@ class Patient extends Model
         'pulse',
         'temperature_c',
         'oxygen_saturation',
-        'pain',
-        'avatar',
+        'pain'
     ];
     public function diagnosis()
     {

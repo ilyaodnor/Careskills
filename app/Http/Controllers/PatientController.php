@@ -1,0 +1,92 @@
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\File;
+use App\Models\Patient;
+use Illuminate\Http\Request;
+class PatientController extends Controller
+    {
+        public function show(Request $request, $patient_id){
+            $patient = Patient::find($patient_id);
+
+            if (!$patient) {
+                abort(404, 'Patient not found');
+            }
+
+            $dialoguePath = public_path("CareskillsAssets/characters/{$patient->name}/dialogue.json");
+
+            if (!file_exists($dialoguePath)) {
+                abort(404, 'Dialogue file not found');
+            }
+
+            $dialogues = json_decode(file_get_contents($dialoguePath), true);
+
+            if (!$dialogues || !isset($dialogues[0])) {
+                abort(500, 'Invalid dialogue format');
+            }
+
+            $dialogue = $dialogues[0];
+            $choiceIndex = $request->get('choice');
+            $choice = $followUp = null;
+
+            if (isset($choiceIndex)) {
+                $choice = $dialogue['choices'][$choiceIndex] ?? null;
+                $followUp = $choice['followUp'] ?? null;
+            }
+
+            return view('office', compact('patient', 'dialogue', 'choiceIndex', 'choice', 'followUp'));
+        }
+
+        public function savePatientsToDatabase()
+        {
+            $json = file_get_contents(public_path('CareskillsAssets/scenarios.json'));
+            $patients = json_decode($json, true);
+
+            foreach ($patients as $patient) {
+                Patient::create([
+                    'name' => $patient['name'],
+                    'surname' => $patient['surname'],
+                    'gender' => $patient['gender'],
+                    'age' => $patient['age'],
+                    'diagnosis_id' => $patient['diagnosis_id'],
+                    'medical_history' => $patient['medical_history'],
+                    'symptoms' => $patient['symptoms'],
+                    'weight' => $patient['weight'],
+                    'height' => $patient['height'],
+                    'allergies' => $patient['allergies'],
+                    'chronic_conditions' => $patient['chronic_conditions'],
+                    'current_medications' => $patient['current_medications'],
+                    'smoker' => $patient['smoker'],
+                    'alcohol_use' => $patient['alcohol_use'],
+                    'blood_pressure' => $patient['blood_pressure'],
+                    'pulse' => $patient['pulse'],
+                    'temperature_c' => $patient['temperature_c'],
+                    'oxygen_saturation' => $patient['oxygen_saturation'],
+                    'pain' => $patient['pain']
+                ]);
+            }
+        }
+        public function exportDialoguesToFiles()
+        {
+            $json = file_get_contents(public_path('CareskillsAssets/scenarios.json'));
+            $patients = json_decode($json, true);
+
+            foreach ($patients as &$patient)
+            {
+                $name = $patient['name'];
+                $dialogues = $patient['dialogues'] ?? [];
+
+                $directory = public_path("CareskillsAssets/character/{$name}");
+                if (!File::exists($directory)) {
+                    File::makeDirectory($directory, 0755, true);
+                }
+
+                $dialoguePath = $directory . '/dialogue.json';
+                File::put($dialoguePath, json_encode($dialogues, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+                unset($patient['dialogues']);
+            }
+
+            File::put(public_path('CareskillsAssets/scenarios.json'), json_encode($patients, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        }
+
+    }

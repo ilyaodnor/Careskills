@@ -6,16 +6,13 @@
     <title>Careskills</title>
     @vite(['resources/css/home.css', 'resources/js/home.js'])
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-        }
-    </style>
+
 
 </head>
 <body>
 <div class="logo-container">
     <img src="CareskillsAssets/Social-media-icons/Da-Vinci-College-Logo.png" alt="">
-    <a class="logo" href="{{ route('home') }}">Da Vinci: Careskills</a>
+    <a class="logo">Da Vinci: Careskills</a>
 </div>
 
 <h1 class="header-players__statistic">Top Players:</h1>
@@ -55,8 +52,9 @@
 
 
             <div class="game__container">
-                <a href="{{ route('office') }} " class="continue-button">Continue</a>
-                <a href="{{ route('office') }} " class="New-game-button">New game</a>
+                <a href="{{ route('patient.show', 1) }}" class="continue-button">Continue</a>
+                <a href="{{ route('patient.show', 1) }}" class="New-game-button">New game</a>
+
                 <a id = "settingsButton">Settings</a>
             </div>
             <div class="user__info">

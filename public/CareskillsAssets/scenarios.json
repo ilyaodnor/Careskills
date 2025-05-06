@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Johan",
+        "surname": "de Vries",
+        "gender": "Male",
+        "age": 68,
+        "diagnosis_id": 1,
+        "medical_history": "Artrose, Hypertensie",
+        "symptoms": "Lage rugpijn",
+        "weight": 75.5,
+        "height": 1.78,
+        "allergies": null,
+        "chronic_conditions": null,
+        "current_medications": null,
+        "smoker": false,
+        "alcohol_use": false,
+        "blood_pressure": "130\/85",
+        "pulse": 72,
+        "temperature_c": 36.8,
+        "oxygen_saturation": 98,
+        "pain": 6,
+        "diagnosis": "Spondylose",
+        "treatments": [
+            "Fysiotherapie",
+            "Ibuprofen"
+        ],
+        "correct": true
+    }
+]
