@@ -254,9 +254,10 @@ footer {
     align-items: center;
     font-size: 1rem;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
+    right: 0;
 }
 
 .container {
