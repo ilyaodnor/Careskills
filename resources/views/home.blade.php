@@ -11,7 +11,7 @@
 <body>
 <div class="logo-container">
     <img src="CareskillsAssets/Social-media-icons/Da-Vinci-College-Logo.png" alt="">
-    <a class="logo" href="{{ route('home') }}">Da Vinci: Careskills</a>
+    <a class="logo" href="{{ url('/') }}">Da Vinci: Careskills</a>
 </div>
 
 <main>
@@ -65,8 +65,8 @@
 
 
             <div class="game__container">
-                <a href="{{ route('office') }} " class="continue-button">Continue</a>
-                <a href="{{ route('office') }} " class="New-game-button">Regels</a>
+                <a href="{{ route('patient.show',1) }} " class="continue-button">Continue</a>
+                <a href="{{ route('patient.show',1) }} " class="New-game-button">Regels</a>
                 <a id = "settingsButton">Instellingen</a>
             </div>
             <div class="user__info-container">
