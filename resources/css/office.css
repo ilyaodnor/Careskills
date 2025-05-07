@@ -6,13 +6,13 @@ main {
     @apply flex justify-center items-end h-screen relative;
     font-family: 'Futura', sans-serif;
     user-select: none;
+    display: flex;
+    align-items: center;
 }
 
 .patient {
     position: absolute;
     width: 800px;
-    left: 50%;
-    transform: translateX(-50%);
     bottom: 0;
 }
 
@@ -344,3 +344,87 @@ footer{
     position: absolute;
     width: 100%;
 }
+#bg-audio {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    width: 2000px;
+    opacity: 0.8;
+    z-index: 1000;
+}
+.settings{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 200;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+/* 1) Сбросим стандартный вид и уберём отступы у input */
+#volumeSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height: 6px;        /* толщина трека */
+    margin: 0;          /* убираем внешние отступы */
+    padding: 0;         /* убираем внутренние отступы */
+    background: transparent; /* фон зададим на уровне ::-runnable-track */
+}
+
+/* 2) Проговорим, как рисовать сам трек в WebKit */
+#volumeSlider::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+/* 3) И ползунок (thumb) в WebKit */
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -4px;   /* чтобы центр ползунка совпал с треком */
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+
+#volumeSlider::-moz-range-track {
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    border: none;
+}
+#Save-settings{
+    position: absolute;
+    right: 48.8%;
+    top: 56%;
+}
+#volumeSlider{
+    position: relative;
+    margin-top: 20px;
+    left: 2px;
+}
+
+
+

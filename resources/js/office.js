@@ -6,22 +6,21 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-
 const menuButton = document.getElementById("menuButton");
 const menu = document.getElementById("menu");
 const openSettings = document.getElementById("openSettings");
-const settingsModal = document.getElementById("settingsModal");
-const closeModal = document.getElementById("closeModal");
-const SaveSettings = document.getElementById("save-settings");
+const settingsModal = document.getElementById("settings");
+const overlay = document.getElementById("overlay");
+const audio = document.getElementById("bg-audio");
+const Audiobutton = document.getElementById("Audio-toggle");
+const volumeSlider = document.getElementById("volumeSlider");
+
 
 menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("active");
     menu.classList.toggle("show");
 });
 
-openSettings.addEventListener("click", () => {
-    settingsModal.style.display = "block";
-});
 
 
 
@@ -44,4 +43,85 @@ itemsCloseButton.addEventListener('click', () => {
     }
 
 });
+
+let clicked = false;
+const Pacient = document.getElementById("patient");
+const dialogueWraper = document.getElementById("dialogueWraper");
+Pacient.addEventListener("click", () => {
+    if (!clicked) {
+    console.log(clicked)
+        itemsBox.style.display = 'none';
+        itemsCloseButton.style.display = 'none';
+        console.log();
+        dialogueWraper.style.display = 'none';
+        Pacient.style.transition = 'transform 0.3s ease-in-out';
+        Pacient.style.transform = 'scale(1.3)'
+
+    }
+    else {
+        // Второй клик
+        itemsBox.style.display = 'flex';
+        itemsCloseButton.style.display = 'flex';
+        Pacient.style.transform = 'scale(1)'
+        dialogueWraper.style.display = 'flex';
+    }
+    Pacient.classList.toggle("active");
+    clicked = !clicked;
+});
+
+audio.volume = 0.1;
+Audiobutton.addEventListener("click", function() {
+    if (audio.paused) {
+        audio.play();
+        Audiobutton.textContent = "Audio Pause";
+        Audiobutton.style.backgroundColor = "#0ee39e";
+    } else {
+        audio.pause();
+        Audiobutton.textContent = "Audio play";
+        Audiobutton.style.backgroundColor = "red";
+
+    }
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const clickSound = new Audio('/CareskillsAssets/musicAsset/click.mp3');
+    clickSound.volume = 0.9;
+
+    const buttons = document.querySelectorAll(".menu-item");
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const sound = clickSound.cloneNode();
+            sound.play();
+        });
+    });
+});
+
+
+
+openSettings.addEventListener("click", () => {
+    const isHidden = settingsModal.style.display === 'none' || settingsModal.style.display === '';
+    settingsModal.style.display = isHidden ? 'block' : 'none';
+    overlay.style.display = isHidden ? 'block' : 'none';
+});
+document.getElementById("Save-settings").addEventListener("click", () => {
+    settingsModal.style.display = 'none';
+    overlay.style.display = 'none';
+});
+function updateSliderBackground(v) {
+    const pct = v * 100;
+    volumeSlider.style.background =
+        `linear-gradient(to right, #007bff ${pct}%, #ddd ${pct}%)`;
+}
+
+// при старте подставим текущее значение
+updateSliderBackground(audio.volume);
+
+// а дальше — слушаем ввод
+volumeSlider.addEventListener('input', (e) => {
+    const v = parseFloat(e.target.value);
+    audio.volume = v;
+    updateSliderBackground(v);
+});
+
+
 
