@@ -7,13 +7,12 @@ main {
     font-family: 'Futura', sans-serif;
     user-select: none;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .patient {
-    position: absolute;
-    width: 800px;
-    bottom: 0;
+    width: 70%;
+
 }
 
 .patient-img {
@@ -368,31 +367,28 @@ footer{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
-/* 1) Сбросим стандартный вид и уберём отступы у input */
 #volumeSlider {
     -webkit-appearance: none;
     appearance: none;
     width: 80%;
-    height: 6px;        /* толщина трека */
-    margin: 0;          /* убираем внешние отступы */
-    padding: 0;         /* убираем внутренние отступы */
-    background: transparent; /* фон зададим на уровне ::-runnable-track */
+    height: 6px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
 }
 
-/* 2) Проговорим, как рисовать сам трек в WebKit */
 #volumeSlider::-webkit-slider-runnable-track {
     height: 6px;
     background: #ddd;
     border-radius: 3px;
 }
 
-/* 3) И ползунок (thumb) в WebKit */
 #volumeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 14px;
     height: 14px;
-    margin-top: -4px;   /* чтобы центр ползунка совпал с треком */
+    margin-top: -4px;
     border-radius: 50%;
     background: #007bff;
     cursor: pointer;

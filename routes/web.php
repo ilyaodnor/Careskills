@@ -11,6 +11,9 @@ Route::get('/', function () {
 Route::get('/office', function () {
     return view('office');
 })->name('office');
+
+
+
 //    ->middleware(['auth', 'verified'])->name('office');
 //
 //Route::middleware('auth')->group(function () {
