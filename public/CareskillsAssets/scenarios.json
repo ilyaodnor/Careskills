@@ -7,7 +7,7 @@
         "age": 68,
         "diagnosis_id": 1,
         "medical_history": "Artrose, Hypertensie",
-        "symptoms": "Lage rugpijn",
+        "symptoms": ["Lage rugpijn"],
         "weight": 75.5,
         "height": 1.78,
         "allergies": null,
