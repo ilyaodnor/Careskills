@@ -27,7 +27,7 @@
     </button>
     {{--MENU--}}
     <div class="menu" id="menu">
-        <a href="{{ route('home') }}" class="menu-item">Go back to menu</a>
+        <a href="{{ url('/') }}" class="menu-item">Go back to menu</a>
         <button class="menu-item" id="openSettings">Settings</button>
         <button class="menu-item">Audio on/off</button>
     </div>
