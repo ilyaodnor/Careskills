@@ -84,7 +84,6 @@ class PatientController extends Controller
                 $dialoguePath = $directory . '/dialogue.json';
                 File::put($dialoguePath, json_encode($dialogues, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-                unset($patient['dialogues']);
             }
 
             File::put(public_path('CareskillsAssets/scenarios.json'), json_encode($patients, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
