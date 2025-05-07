@@ -13,6 +13,7 @@ const settingsModal = document.getElementById("settings");
 const overlay = document.getElementById("overlay");
 const audio = document.getElementById("bg-audio");
 const Audiobutton = document.getElementById("Audio-toggle");
+const volumeSlider = document.getElementById("volumeSlider");
 
 
 menuButton.addEventListener("click", () => {
@@ -72,8 +73,13 @@ audio.volume = 0.1;
 Audiobutton.addEventListener("click", function() {
     if (audio.paused) {
         audio.play();
+        Audiobutton.textContent = "Audio Pause";
+        Audiobutton.style.backgroundColor = "#0ee39e";
     } else {
         audio.pause();
+        Audiobutton.textContent = "Audio play";
+        Audiobutton.style.backgroundColor = "red";
+
     }
 });
 document.addEventListener("DOMContentLoaded", function() {
@@ -100,6 +106,21 @@ openSettings.addEventListener("click", () => {
 document.getElementById("Save-settings").addEventListener("click", () => {
     settingsModal.style.display = 'none';
     overlay.style.display = 'none';
+});
+function updateSliderBackground(v) {
+    const pct = v * 100;
+    volumeSlider.style.background =
+        `linear-gradient(to right, #007bff ${pct}%, #ddd ${pct}%)`;
+}
+
+// при старте подставим текущее значение
+updateSliderBackground(audio.volume);
+
+// а дальше — слушаем ввод
+volumeSlider.addEventListener('input', (e) => {
+    const v = parseFloat(e.target.value);
+    audio.volume = v;
+    updateSliderBackground(v);
 });
 
 
