@@ -1,1 +1,39 @@
-[]
+[
+    {
+        "text": "Dokter, ik heb al drie weken rugpijn... Komt dat door mijn leeftijd?",
+        "choices": [
+            {
+                "text": "Kunt u de pijn beschrijven?",
+                "effect": "Patiënt beschrijft de pijn",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "De patiënt geeft aan dat het een zeurende pijn is die erger wordt bij beweging."
+                }
+            },
+            {
+                "text": "Wanneer is de rugpijn begonnen?",
+                "effect": "Tijdstip van begin achterhaald",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "De patiënt zegt dat de pijn drie weken geleden begon zonder duidelijke aanleiding."
+                }
+            },
+            {
+                "text": "Heeft u eerder dit soort klachten gehad?",
+                "effect": "Medische voorgeschiedenis verduidelijkt",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "De patiënt meldt dat hij in het verleden last had van artrose in zijn knieën."
+                }
+            },
+            {
+                "text": "Heeft u andere klachten, zoals gevoelloosheid of tintelingen?",
+                "effect": "Aanvullende symptomen geïdentificeerd",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "De patiënt meldt geen gevoelloosheid, maar wel lichte stijfheid in de ochtend."
+                }
+            }
+        ]
+    }
+]
