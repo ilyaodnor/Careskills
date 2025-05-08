@@ -27,39 +27,35 @@
                 "text": "Dokter, ik heb al drie weken rugpijn... Komt dat door mijn leeftijd?",
                 "choices": [
                     {
-                        "text": "We doen een MRI van de wervelkolom.",
-                        "effect": "MRI aangevraagd",
+                        "text": "Kunt u de pijn beschrijven?",
+                        "effect": "Patiënt beschrijft de pijn",
                         "followUp": {
-                            "examination": {
-                                "type": "MRI",
-                                "result": "Verminderde tussenwervelschijfruimte L4-L5",
-                                "image": "mri_rug.png"
-                            },
-                            "feedback": "Goede keuze om degeneratieve veranderingen te onderzoeken."
+                            "examination": null,
+                            "feedback": "De patiënt geeft aan dat het een zeurende pijn is die erger wordt bij beweging."
                         }
                     },
                     {
-                        "text": "We doen een bloedonderzoek.",
-                        "effect": "Bloedonderzoek uitgevoerd",
+                        "text": "Wanneer is de rugpijn begonnen?",
+                        "effect": "Tijdstip van begin achterhaald",
                         "followUp": {
                             "examination": null,
-                            "feedback": "Niet de juiste diagnostische keuze voor rugklachten."
+                            "feedback": "De patiënt zegt dat de pijn drie weken geleden begon zonder duidelijke aanleiding."
                         }
                     },
                     {
-                        "text": "We maken een echo van de buik.",
-                        "effect": "Echo uitgevoerd",
+                        "text": "Heeft u eerder dit soort klachten gehad?",
+                        "effect": "Medische voorgeschiedenis verduidelijkt",
                         "followUp": {
                             "examination": null,
-                            "feedback": "Echo is niet relevant voor deze klachten."
+                            "feedback": "De patiënt meldt dat hij in het verleden last had van artrose in zijn knieën."
                         }
                     },
                     {
-                        "text": "We maken een röntgenfoto van de borst.",
-                        "effect": "Röntgen uitgevoerd",
+                        "text": "Heeft u andere klachten, zoals gevoelloosheid of tintelingen?",
+                        "effect": "Aanvullende symptomen geïdentificeerd",
                         "followUp": {
                             "examination": null,
-                            "feedback": "Niet het juiste onderzoek voor lage rugpijn."
+                            "feedback": "De patiënt meldt geen gevoelloosheid, maar wel lichte stijfheid in de ochtend."
                         }
                     }
                 ]
