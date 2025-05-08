@@ -1,1 +1,43 @@
-[]
+[
+    {
+        "text": "Dokter, ik heb al drie weken rugpijn... Komt dat door mijn leeftijd?",
+        "choices": [
+            {
+                "text": "We doen een MRI van de wervelkolom.",
+                "effect": "MRI aangevraagd",
+                "followUp": {
+                    "examination": {
+                        "type": "MRI",
+                        "result": "Verminderde tussenwervelschijfruimte L4-L5",
+                        "image": "mri_rug.png"
+                    },
+                    "feedback": "Goede keuze om degeneratieve veranderingen te onderzoeken."
+                }
+            },
+            {
+                "text": "We doen een bloedonderzoek.",
+                "effect": "Bloedonderzoek uitgevoerd",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "Niet de juiste diagnostische keuze voor rugklachten."
+                }
+            },
+            {
+                "text": "We maken een echo van de buik.",
+                "effect": "Echo uitgevoerd",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "Echo is niet relevant voor deze klachten."
+                }
+            },
+            {
+                "text": "We maken een röntgenfoto van de borst.",
+                "effect": "Röntgen uitgevoerd",
+                "followUp": {
+                    "examination": null,
+                    "feedback": "Niet het juiste onderzoek voor lage rugpijn."
+                }
+            }
+        ]
+    }
+]
