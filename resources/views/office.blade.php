@@ -19,22 +19,12 @@
 <body>
 <audio id="bg-audio" loop autoplay >
     <source src="{{ asset('/CareskillsAssets/musicAsset/background.mp3') }}" type="audio/mpeg">
-    Ваш браузер не поддерживает элемент <code>audio</code>.
 </audio>
 <main>
     <x-office.menu />
     <x-office.patient :patient="$patient" />
-    {{--    DIALOG--}}
     <x-office.dialog-wraper :dialogue="$dialogue" :choiceIndex="$choiceIndex" />
-    {{--    DIALOG--}}
-
-
-
-    {{--ITEMS BOX--}}
     <x-office.items-box />
-
-
-
 </main>
 
 </body>
