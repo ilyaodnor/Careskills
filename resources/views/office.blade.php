@@ -17,48 +17,22 @@
     </style>
 </head>
 <body>
+<audio id="bg-audio" loop autoplay >
+    <source src="{{ asset('/CareskillsAssets/musicAsset/background.mp3') }}" type="audio/mpeg">
+    Ваш браузер не поддерживает элемент <code>audio</code>.
+</audio>
 <main>
-    {{--MENU BUTTON--}}
-    <button class="menu-btn" id="menuButton">
-        <span class="bar top"></span>
-        <span class="bar middle"></span>
-        <span class="bar bottom"></span>
-    </button>
-    {{--MENU--}}
-    <div class="menu" id="menu">
-        <a href="{{ url('/') }}" class="menu-item">Go back to menu</a>
-        <button class="menu-item" id="openSettings">Settings</button>
-        <button class="menu-item">Audio on/off</button>
-    </div>
-    {{--PATIENT IMG--}}
-    <div class="patient">
-        <img src="{{ asset('/CareskillsAssets/characters/'.$patient->name.'/front.png') }}">
-    </div>
-
-{{--    DIALOG--}}
-    <div class="dialogue-wrapper">
-
-        <div class="dialogue">
-            <div class="dialogue-box">{{ $dialogue['text'] }}</div>
-            <div class="dialogue-arrow"></div>
-        </div>
-        @if ($choiceIndex === null)
-            <div class="answer">
-                @foreach($dialogue['choices'] as $index => $option)
-                    <div class="answer-option">
-                        <button type="submit" name="choice" value="{{ $index }}">
-                            {{ $option['text'] }}
-                        </button>
-                    </div>
-                @endforeach
-            </div>
-        @endif
-    </div>
+    <x-office.menu />
+    <x-office.patient :patient="$patient" />
+    {{--    DIALOG--}}
+    <x-office.dialog-wraper :dialogue="$dialogue" :choiceIndex="$choiceIndex" />
+    {{--    DIALOG--}}
 
 
 
     {{--ITEMS BOX--}}
-    <x-items-box />
+    <x-office.items-box />
+
 
 
 </main>

@@ -12,9 +12,8 @@ const openSettings = document.getElementById("openSettings");
 const settingsModal = document.getElementById("settings");
 const overlay = document.getElementById("overlay");
 const audio = document.getElementById("bg-audio");
-const Audiobutton = document.getElementById("Audio-toggle");
+const Audiobutton = document.getElementById("audioButton");
 const volumeSlider = document.getElementById("volumeSlider");
-
 
 menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("active");
@@ -45,27 +44,26 @@ itemsCloseButton.addEventListener('click', () => {
 });
 
 let clicked = false;
-const Pacient = document.getElementById("patient");
+const geduldig = document.getElementById("geduldig");
 const dialogueWraper = document.getElementById("dialogueWraper");
-Pacient.addEventListener("click", () => {
+geduldig.addEventListener("click", () => {
     if (!clicked) {
     console.log(clicked)
         itemsBox.style.display = 'none';
         itemsCloseButton.style.display = 'none';
         console.log();
         dialogueWraper.style.display = 'none';
-        Pacient.style.transition = 'transform 0.3s ease-in-out';
-        Pacient.style.transform = 'scale(1.3)'
+        geduldig.style.transition = 'transform 0.3s ease-in-out';
+        geduldig.style.transform = 'scale(1.3)'
 
     }
     else {
-        // Второй клик
         itemsBox.style.display = 'flex';
         itemsCloseButton.style.display = 'flex';
-        Pacient.style.transform = 'scale(1)'
+        geduldig.style.transform = 'scale(1)'
         dialogueWraper.style.display = 'flex';
     }
-    Pacient.classList.toggle("active");
+    geduldig.classList.toggle("active");
     clicked = !clicked;
 });
 
@@ -97,31 +95,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-openSettings.addEventListener("click", () => {
-    const isHidden = settingsModal.style.display === 'none' || settingsModal.style.display === '';
-    settingsModal.style.display = isHidden ? 'block' : 'none';
-    overlay.style.display = isHidden ? 'block' : 'none';
-});
-document.getElementById("Save-settings").addEventListener("click", () => {
-    settingsModal.style.display = 'none';
-    overlay.style.display = 'none';
-});
-function updateSliderBackground(v) {
-    const pct = v * 100;
-    volumeSlider.style.background =
-        `linear-gradient(to right, #007bff ${pct}%, #ddd ${pct}%)`;
-}
-
-// при старте подставим текущее значение
-updateSliderBackground(audio.volume);
-
-// а дальше — слушаем ввод
-volumeSlider.addEventListener('input', (e) => {
-    const v = parseFloat(e.target.value);
-    audio.volume = v;
-    updateSliderBackground(v);
-});
-
-
+console.log(12313412)
 
