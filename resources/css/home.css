@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,13 +26,11 @@ body {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    height: auto;
-    /*overflow: hidden;*/
-
+    height: 100vh;
+    font-family: 'Futura', sans-serif;
 }
 
-main {
-    font-family: 'Futura', sans-serif;
+main{
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -214,37 +216,47 @@ main {
     color: black;
     border: 2px solid rgba(230, 230, 230, 0.44);
 }
-
-
-
 .user__info-container {
-    grid-column: span 1;
-    grid-row: span 2;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+    max-width: 100%; /* Optional: Ensure the container is not too wide */
 }
-.user-photo{
+
+.user-photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background-color: #c8c8c8;
     border: 2px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin-right: 20px;
 }
-.user__info{
+
+.user__info {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    gap: 10px;
 }
+
+.user__name {
+    font-size: 1.5rem;
+    font-weight: 800; /* This is equivalent to font-extrabold */
+    color: #333;
+}
+
+.user__level {
+    font-size: 1.25rem;
+    color: #666;
+}
+
 .user-xp-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 400px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
 }
 
 .xp-bar {
@@ -265,11 +277,6 @@ main {
     border-radius: 2px;
 }
 
-.user-xp-container{
-    font-size: 1rem;
-    color: #333;
-    margin-left: 20px;
-}
 
 .game__container {
     grid-column: span 1;
