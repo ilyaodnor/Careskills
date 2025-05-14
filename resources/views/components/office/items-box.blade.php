@@ -1,6 +1,3 @@
-<div class="items-box-close-button" id = "itemsBoxCloseButton">
-    <span class="items-bar"></span>
-</div>
 <div class="items-box" id = "itemsBox">
 
     <div class="items-box" id="itemsBox">
