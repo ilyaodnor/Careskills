@@ -59,12 +59,49 @@
                         }
                     }
                 ]
+            },{
+                "text": "Dokter, ik hoor sinds een paar dagen een piep in mijn oor... Het gaat maar niet weg.",
+                "choices": [
+                    {
+                        "text": "Is het in één oor of beide oren?",
+                        "effect": "Locatie van het probleem vastgesteld",
+                        "followUp": {
+                            "examination": null,
+                            "feedback": "De patiënt zegt dat de piep alleen in het rechteroor zit."
+                        }
+                    },
+                    {
+                        "text": "Heeft u recent harde muziek gehoord of lawaai ervaren?",
+                        "effect": "Mogelijke oorzaak onderzocht",
+                        "followUp": {
+                            "examination": null,
+                            "feedback": "De patiënt vertelt dat hij afgelopen weekend op een luid concert is geweest."
+                        }
+                    },
+                    {
+                        "text": "Heeft u ook last van duizeligheid of gehoorverlies?",
+                        "effect": "Aanvullende symptomen in kaart gebracht",
+                        "followUp": {
+                            "examination": null,
+                            "feedback": "De patiënt meldt geen duizeligheid, maar merkt wel dat zijn gehoor iets doffer klinkt dan normaal."
+                        }
+                    },
+                    {
+                        "text": "Komt het geluid constant voor of in episodes?",
+                        "effect": "Tijdsduur van symptomen verduidelijkt",
+                        "followUp": {
+                            "examination": null,
+                            "feedback": "De patiënt zegt dat het een constant geluid is dat vooral 's nachts opvalt."
+                        }
+                    }
+                ]
             }
+
         ],
         "treatments": [
             "Fysiotherapie",
             "Ibuprofen"
         ],
         "correct": true
-    }
+    },
 ]

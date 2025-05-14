@@ -3,7 +3,7 @@
 </div>
 <div class="items-box" id = "itemsBox">
     <div class="tooltip">
-        <img src="{{ asset('CareskillsAssets/items-icons/blood.png') }}" alt="blood">
+        <img src="{{ asset('CareskillsAssets/items-icons/blood.png') }}" alt="blood" id="BloedAfnemen">
         <span class="tooltip-text">Bloed</span>
     </div>
     <div class="tooltip">
@@ -17,5 +17,10 @@
     <div class="tooltip">
         <img src="{{ asset('CareskillsAssets/items-icons/UZI.png') }}" alt="UZI">
         <span class="tooltip-text">UZI</span>
+    </div>
+    <div class="tooltip">
+        <img src="{{ asset('CareskillsAssets/items-icons/measure.png') }}" alt="Indicatorenmeten">
+        <span class="tooltip-text">Indicatoren meten
+</span>
     </div>
 </div>
