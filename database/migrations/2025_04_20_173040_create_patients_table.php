@@ -27,7 +27,8 @@ return new class extends Migration
             $table->text('current_medications')->nullable();
             $table->boolean('smoker')->default(false);
             $table->boolean('alcohol_use')->default(false);
-            $table->string('blood_pressure');
+            $table->integer('systolic_bp');
+            $table->integer('diastolic_bp');
             $table->integer('pulse');
             $table->float('temperature_c');
             $table->integer('oxygen_saturation');
