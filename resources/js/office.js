@@ -14,6 +14,7 @@ const overlay = document.getElementById("overlay");
 const audio = document.getElementById("bg-audio");
 const Audiobutton = document.getElementById("audioButton");
 const volumeSlider = document.getElementById("volumeSlider");
+const BloedAfnemen = document.getElementById("BloedAfnemen");
 
 menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("active");
@@ -93,6 +94,34 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+if (BloedAfnemen) {
+    BloedAfnemen.addEventListener("click", function () {
+
+        document.body.style.backgroundImage = "url('/CareskillsAssets/backgrounds/BloodOffice.png')";
+
+ // кнопка которая поялвяеется через время чтобы завершить процедуру        setTimeout(() => {
+            //const completeBtn = document.getElementById("completeActionBtn");
+            //if (completeBtn) {
+                //completeBtn.style.display = "block";
+            //}
+        //}, 6000);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const feedbackButtons = document.querySelectorAll(".feedback-button");
+    const dialogueBox = document.querySelector(".dialogue-box");
+
+    feedbackButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const feedback = this.dataset.feedback;
+            if (dialogueBox) {
+                dialogueBox.textContent = feedback;
+            }
+        });
+    });
+});
+
 
 
 console.log(12313412)

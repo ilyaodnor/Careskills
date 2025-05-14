@@ -8,7 +8,11 @@
         <div class="answer">
             @foreach($dialogue['choices'] as $index => $option)
                 <div class="answer-option">
-                    <button type="submit" name="choice" value="{{ $index }}">
+                    <button
+                        type="button"
+                        class="feedback-button"
+                        data-feedback="{{ $option['followUp']['feedback'] }}"
+                    >
                         {{ $option['text'] }}
                     </button>
                 </div>
