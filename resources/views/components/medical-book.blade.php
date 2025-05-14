@@ -5,7 +5,7 @@
 
     <div class="px-6 py-4 grid grid-cols-2 gap-4 text-sm text-gray-800">
         <div class="col-span-2 flex items-center space-x-4">
-            <img src="{{ asset('CareskillsAssets/'.$patient->name.'/avatar.png') }}" alt="Patiënt" class="w-20 h-20 rounded-full border-2 border-blue-200">
+            <img src="{{ asset('CareskillsAssets/characters/'.$patient->name.'/avatar.jpg') }}" alt="Patiënt" class="w-20 h-20 rounded-full border-2 border-blue-200">
             <div>
                 <p><strong>Naam:</strong> {{ $patient->name }} {{ $patient->surname }}</p>
                 <p><strong>Geslacht:</strong> {{ $patient->gender }}</p>
