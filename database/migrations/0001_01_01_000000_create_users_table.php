@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
+            $table->integer('level');
+            $table->integer('xp_to_next_level')->default(100);
             $table->rememberToken();
             $table->timestamps();
         });
