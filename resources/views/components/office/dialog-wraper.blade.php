@@ -7,14 +7,8 @@
     @if ($choiceIndex === null)
         <div class="answer">
             @foreach($dialogue['choices'] as $index => $option)
-                <div class="answer-option">
-                    <button
-                        type="button"
-                        class="feedback-button"
-                        data-feedback="{{ $option['followUp']['feedback'] }}"
-                    >
-                        {{ $option['text'] }}
-                    </button>
+                <div class="answer-option" data-feedback="{{ $option['followUp']['feedback'] }}">
+                    {{ $option['text'] }}
                 </div>
             @endforeach
         </div>

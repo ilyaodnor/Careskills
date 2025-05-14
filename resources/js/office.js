@@ -15,7 +15,6 @@ const audio = document.getElementById("bg-audio");
 const Audiobutton = document.getElementById("audioButton");
 const volumeSlider = document.getElementById("volumeSlider");
 const BloedAfnemen = document.getElementById("BloedAfnemen");
-
 menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("active");
     menu.classList.toggle("show");
@@ -24,25 +23,10 @@ menuButton.addEventListener("click", () => {
 
 
 
-const itemsCloseButton = document.getElementById('itemsBoxCloseButton')
-console.log(itemsCloseButton)
-let itemsBoxOpend = true;
+//
 const itemsBox = document.getElementById('itemsBox');
 
 
-itemsCloseButton.addEventListener('click', () => {
-    if (itemsBoxOpend) {
-        itemsBox.style.display = 'none';
-        itemsCloseButton.style.top = '98%';
-        itemsBoxOpend = false;
-        itemsCloseButton.style.transform = 'rotate(0deg)';
-    } else {
-        itemsBox.style.display = 'flex';
-        itemsCloseButton.style.top = '88.5%';
-        itemsBoxOpend = true;
-    }
-
-});
 
 let clicked = false;
 const geduldig = document.getElementById("geduldig");
@@ -51,7 +35,6 @@ geduldig.addEventListener("click", () => {
     if (!clicked) {
     console.log(clicked)
         itemsBox.style.display = 'none';
-        itemsCloseButton.style.display = 'none';
         console.log();
         dialogueWraper.style.display = 'none';
         geduldig.style.transition = 'transform 0.3s ease-in-out';
@@ -60,7 +43,6 @@ geduldig.addEventListener("click", () => {
     }
     else {
         itemsBox.style.display = 'flex';
-        itemsCloseButton.style.display = 'flex';
         geduldig.style.transform = 'scale(1)'
         dialogueWraper.style.display = 'flex';
     }
@@ -109,10 +91,10 @@ if (BloedAfnemen) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const feedbackButtons = document.querySelectorAll(".feedback-button");
+    const answerOptions = document.querySelectorAll(".answer-option");
     const dialogueBox = document.querySelector(".dialogue-box");
 
-    feedbackButtons.forEach(button => {
+    answerOptions.forEach(button => {
         button.addEventListener("click", function () {
             const feedback = this.dataset.feedback;
             if (dialogueBox) {

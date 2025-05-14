@@ -30,7 +30,6 @@
 {{--    <button id="completeActionBtn" style="display: none; margin-top: 20px;" style="background-color: #0ee39e">--}}
 {{--        Завершить процесс--}}
 {{--    </button>--}}
-=======
 
     <x-modal name="MedicalBookMoodal" :show="false" maxWidth="md">
         <x-medical-book :patient="$patient"/>
