@@ -421,3 +421,14 @@ footer{
     margin-top: 20px;
     left: 2px;
 }
+
+.indicators-container {
+    position: absolute;
+    display: flex;
+    margin-bottom:800px;
+    font-size:20px;
+    gap:15px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}

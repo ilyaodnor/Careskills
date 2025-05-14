@@ -5,7 +5,7 @@
 
     <div class="px-6 py-4 grid grid-cols-2 gap-4 text-sm text-gray-800">
         <div class="col-span-2 flex items-center space-x-4">
-            <img src="{{ asset('images/'.$patient->avatar.'.png') }}" alt="Patiënt" class="w-20 h-20 rounded-full border-2 border-blue-200">
+            <img src="{{ asset('CareskillsAssets/'.$patient->name.'/avatar.png') }}" alt="Patiënt" class="w-20 h-20 rounded-full border-2 border-blue-200">
             <div>
                 <p><strong>Naam:</strong> {{ $patient->name }} {{ $patient->surname }}</p>
                 <p><strong>Geslacht:</strong> {{ $patient->gender }}</p>
@@ -22,17 +22,17 @@
             <h3 class="font-semibold text-blue-700 mb-2">Symptomen:</h3>
             <p class="text-gray-700 text-sm">{{ $patient->symptoms }}</p>
         </div>
-
+        @isset($patient->current_medications)
         <div class="col-span-2">
             <h3 class="font-semibold text-blue-700 mt-4 mb-2">Medicijnen:</h3>
-            @isset($patient->current_medications)
+
                 <ul class="list-disc list-inside text-gray-700">
                     @foreach(explode(',', $patient->current_medications) as $medication)
                         <li>{{ $medication }}</li>
                     @endforeach
                 </ul>
-            @endisset
         </div>
+        @endisset
 
         @isset($patient->allergies)
             <div class="col-span-2">

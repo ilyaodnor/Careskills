@@ -22,8 +22,14 @@
 </audio>
 <main>
     <x-office.menu />
+    <x-office.patient-indicators :patient="$patient" />
     <x-office.patient :patient="$patient" />
     <x-office.dialog-wraper :dialogue="$dialogue" :choiceIndex="$choiceIndex" />
+
+    <x-modal name="MedicalBookMoodal" :show="false" maxWidth="md">
+        <x-medical-book :patient="$patient"/>
+    </x-modal>
+
     <x-office.items-box />
 </main>
 

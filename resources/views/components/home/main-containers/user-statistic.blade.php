@@ -1,10 +1,7 @@
 <div class="user__info-container">
 
-    @if (auth()->check() && auth()->user()->profile_photo_path)
-        <img src="{{ auth()->user()->profile_photo_url }}" alt="User Photo" class="user-photo">
-    @else
-        <a href="{{route('profile.edit')}}"><img src="{{ asset('CareskillsAssets/users-photos/default-user-photo.png') }}" alt="Default Male Photo" class="user-photo"></a>
-    @endif
+    <img src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('CareskillsAssets/users-photos/default-user-photo.png') }}" alt="Avatar" class="w-40 h-40 rounded-full object-cover">
+
 
     <div class="user__info">
         <h1 class = "user__name">{{ auth()->user()->name }}</h1>
