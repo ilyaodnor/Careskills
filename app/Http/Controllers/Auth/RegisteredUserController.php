@@ -55,6 +55,8 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'avatar' => $avatarPath,
+            'level' => 0,
+            'xp_to_next_level' => 0,
         ]);
 
         event(new Registered($user));
