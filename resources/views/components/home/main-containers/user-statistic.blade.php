@@ -1,6 +1,13 @@
 <div class="user__info-container">
-
-    <img src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('CareskillsAssets/users-photos/default-user-photo.png') }}" alt="Avatar" class="w-40 h-40 rounded-full object-cover">
+    <?php
+    $userIMGSource = auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('CareskillsAssets/users-photos/default-user-photo.png');
+    ?>
+    <img
+        src="{{ $userIMGSource }}"
+        alt="Avatar"
+        class="w-40 h-40 rounded-full object-cover"
+        onerror="this.onerror=null; this.src='{{ asset('CareskillsAssets/users-photos/default-user-photo.png') }}';"
+    />
 
 
     <div class="user__info">

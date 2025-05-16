@@ -18,8 +18,6 @@ main {
 .patient-img {
     @apply h-[800px];
 }
-/*//MAIN LAYOUT*/
-/*ITEMS*/
 .items-box {
     @apply fixed bottom-2 left-[10%] w-[80%] h-[10%]
     grid grid-flow-col items-center justify-start gap-8
@@ -46,7 +44,7 @@ main {
     bg-white text-black text-xs px-4 py-2
     rounded whitespace-nowrap opacity-0 pointer-events-none
     transition-opacity duration-300;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-40%);
     z-index: 10;
 }
 
@@ -72,9 +70,6 @@ main {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-
-    /* Добавьте это: */
-    z-index: 9999;
 }
 .items-box.collapsed {
     opacity: 0;

@@ -26,7 +26,7 @@
     <x-office.patient :patient="$patient" />
     <x-office.dialog-wraper :dialogue="$dialogue" :choiceIndex="$choiceIndex" />
 
-{{--    Появление кнопки завершить процесс после выполненого действия --}}
+{{--    Появление кнопки завершить процесс после выполненого действия--}}
 {{--    <button id="completeActionBtn" style="display: none; margin-top: 20px;" style="background-color: #0ee39e">--}}
 {{--        Завершить процесс--}}
 {{--    </button>--}}
