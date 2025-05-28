@@ -27,10 +27,16 @@
     <x-office.dialog-wraper :dialogue="$dialogue" :choiceIndex="$choiceIndex" />
 
 {{--    Появление кнопки завершить процесс после выполненого действия --}}
-{{--    <button id="completeActionBtn" style="display: none; margin-top: 20px;" style="background-color: #0ee39e">--}}
-{{--        Завершить процесс--}}
-{{--    </button>--}}
+    <button  class="menu-item" id="completeActionBtn" style="display: none; position: absolute; top: 4%; left: 80%">
+        Завершить процесс
+    </button>
 
+    <div class="syringe">
+        <img id="hand-with-syringe" src="/CareskillsAssets/procedures/hand-with-syringe.png" alt="Syringe" style="display: none;">
+    </div>
+    <div class="hand-with-Paracetomol">
+        <img id="hand-with-Paracetomol" src="/CareskillsAssets/procedures/paracetomol.png" alt="Paracetomol" style="display: none;">
+    </div>
     <x-modal name="MedicalBookMoodal" :show="false" maxWidth="md">
         <x-medical-book :patient="$patient"/>
     </x-modal>

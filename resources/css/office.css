@@ -18,8 +18,6 @@ main {
 .patient-img {
     @apply h-[800px];
 }
-/*//MAIN LAYOUT*/
-/*ITEMS*/
 .items-box {
     @apply fixed bottom-2 left-[10%] w-[80%] h-[10%]
     grid grid-flow-col items-center justify-start gap-8
@@ -46,7 +44,7 @@ main {
     bg-white text-black text-xs px-4 py-2
     rounded whitespace-nowrap opacity-0 pointer-events-none
     transition-opacity duration-300;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-40%);
     z-index: 10;
 }
 
@@ -72,9 +70,6 @@ main {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-
-    /* Добавьте это: */
-    z-index: 9999;
 }
 .items-box.collapsed {
     opacity: 0;
@@ -358,69 +353,7 @@ footer{
     border-radius: 20px;
     z-index: 200;
 }
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-}
-#volumeSlider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 80%;
-    height: 6px;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-}
 
-#volumeSlider::-webkit-slider-runnable-track {
-    height: 6px;
-    background: #ddd;
-    border-radius: 3px;
-}
-
-#volumeSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    margin-top: -4px;
-    border-radius: 50%;
-    background: #007bff;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
-}
-
-
-#volumeSlider::-moz-range-track {
-    height: 6px;
-    background: #ddd;
-    border-radius: 3px;
-}
-
-#volumeSlider::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #007bff;
-    cursor: pointer;
-    border: none;
-}
-#Save-settings{
-    position: absolute;
-    right: 48.8%;
-    top: 56%;
-}
-#volumeSlider{
-    position: relative;
-    margin-top: 20px;
-    left: 2px;
-}
 
 .indicators-container {
     position: absolute;
@@ -432,3 +365,92 @@ footer{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
+.syringe {
+    position: absolute;
+    top: 6%;
+    right: 16.5%;
+    width: auto;
+    height: auto;
+}
+
+/* Анимация в отдельном классе */
+.animate-inject {
+    animation: syringe 6s forwards;
+}
+
+@keyframes syringe {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateX(-6.7vw) translateY(18.5vh); /* оставим как было — работает нормально */
+    }
+}
+
+.hand-with-Paracetomol {
+    position: absolute;
+    top: 60%;
+    left: 30.5%;
+    width: 450px;
+    height: 250px;
+}
+
+.Paracetomol-Geven {
+    animation: hand-with-Paracetomol 6s forwards;
+}
+
+@keyframes hand-with-Paracetomol {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-150px);
+    }
+}
+@media (max-width: 1920px) {
+    .hand-with-Paracetomol {
+        width: 30vw;
+        height: auto;
+    }
+
+    .syringe {
+        right: 18%;
+        top: 5%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .hand-with-Paracetomol {
+        width: 35vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hand-with-Paracetomol {
+        top: 62%;
+        left: 28%;
+        width: 40vw;
+    }
+
+    .syringe {
+        right: 14%;
+        top: 7%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hand-with-Paracetomol {
+        top: 65%;
+        left: 25%;
+        width: 45vw;
+    }
+
+    .syringe {
+        right: 12%;
+        top: 8%;
+    }
+}
+
+

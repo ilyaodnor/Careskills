@@ -16,9 +16,10 @@
 
 <main>
     <div class="main-containers">
-        <x-home.main-containers.players-statistic />
-        <x-home.main-containers.game-container />
         <x-home.main-containers.user-statistic />
+
+        <x-home.main-containers.game-container />
+        <x-home.main-containers.players-statistic />
     </div>
     <x-home.about-us />
 </main>
