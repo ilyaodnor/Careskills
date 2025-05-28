@@ -5,7 +5,7 @@
 
     <div class="px-6 py-4 grid grid-cols-2 gap-4 text-sm text-gray-800">
         <div class="col-span-2 flex items-center space-x-4">
-            <img src="{{ asset('CareskillsAssets/characters/'.$patient->name.'/avatar.jpg') }}" alt="Patiënt" class="w-20 h-20 rounded-full border-2 border-blue-200">
+            <img src="{{ asset('CareskillsAssets/characters/'.$patient->name.'/avatar.jpg') }}" alt="Patient" class="w-20 h-20 rounded-full border-2 border-blue-200">
             <div>
                 <p><strong>Naam:</strong> {{ $patient->name }} {{ $patient->surname }}</p>
                 <p><strong>Geslacht:</strong> {{ $patient->gender }}</p>
@@ -15,12 +15,16 @@
 
         <div class="col-span-2 border-t pt-4">
             <h3 class="font-semibold text-blue-700 mb-2">Medische geschiedenis:</h3>
-            <p class="text-gray-700 text-sm">{{ $patient->medical_history }}</p>
+            @foreach($patient->pastDiagnoses as $diagnosis)
+                <p class="text-gray-700 text-sm" title="{{$diagnosis->description}}">{{ $diagnosis->name }}</p>
+            @endforeach
         </div>
 
         <div class="col-span-2 border-t pt-4">
             <h3 class="font-semibold text-blue-700 mb-2">Symptomen:</h3>
-            <p class="text-gray-700 text-sm">{{ $patient->symptoms }}</p>
+            @foreach($patient->symptoms as $symptom)
+                <p class="text-gray-700 text-sm" title="{{$symptom->description}}">{{ $symptom->name }}</p>
+            @endforeach
         </div>
         @isset($patient->current_medications)
         <div class="col-span-2">

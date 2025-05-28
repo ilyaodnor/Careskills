@@ -18,8 +18,6 @@ return new class extends Migration
             $table->enum('gender', ['Male', 'Female']);
             $table->integer('age');
             $table->foreignId('diagnosis_id')->constrained('diagnoses')->onDelete('cascade');
-            $table->text('medical_history');
-            $table->text('symptoms');
             $table->float('weight');
             $table->float('height');
             $table->text('allergies')->nullable();

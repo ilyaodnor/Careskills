@@ -6,9 +6,12 @@
         "gender": "Male",
         "age": 68,
         "diagnosis_id": 1,
-        "medical_history": "Artrose, Hypertensie",
-        "symptoms": [
-            "Lage rugpijn"
+        "medical_history": [
+            11,
+            12
+        ],
+        "symptom_ids": [
+            7
         ],
         "weight": 75.5,
         "height": 1.78,

@@ -27,13 +27,20 @@ class Patient extends Model
         'oxygen_saturation',
         'pain'
     ];
-    public function diagnosis()
+    public function diagnoses()
     {
-        return $this->belongsTo(Diagnosis::class);
+        return $this->belongsToMany(Diagnosis::class, 'patient_diagnosis');
     }
     public function treatments()
     {
         return $this->hasMany(Treatment::class);
     }
-
+    public function symptoms()
+    {
+        return $this->belongsToMany(Symptom::class, 'patient_symptom');
+    }
+    public function pastDiagnoses()
+    {
+        return $this->belongsToMany(Diagnosis::class, 'patient_history');
+    }
 }

@@ -8,6 +8,7 @@ class Diagnosis extends Model
 {
     protected $fillable = [
         'name',
+        'description',
     ];
 
     public function symptoms()
@@ -24,4 +25,13 @@ class Diagnosis extends Model
     {
         return $this->belongsToMany(Scenario::class);
     }
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class);
+    }
+    public function patientsWithHistory()
+    {
+        return $this->belongsToMany(Patient::class, 'patient_history');
+    }
+
 }

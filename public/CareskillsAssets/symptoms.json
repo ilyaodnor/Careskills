@@ -1,0 +1,94 @@
+[
+    {
+        "name": "Duizeligheid",
+        "description": "Gevoel van draaien of verlies van evenwicht"
+    },
+    {
+        "name": "Vermoeidheid",
+        "description": "Algemene uitputting of gebrek aan energie"
+    },
+    {
+        "name": "Misselijkheid",
+        "description": "Gevoel van misselijkheid of aandrang om over te geven"
+    },
+    {
+        "name": "Braken",
+        "description": "Het onwillekeurig uitwerpen van de inhoud van de maag"
+    },
+    {
+        "name": "Koorts",
+        "description": "Lichaamstemperatuur boven de 38°C"
+    },
+    {
+        "name": "Koude rillingen",
+        "description": "Beven of gevoel van kou, vaak samen met koorts"
+    },
+    {
+        "name": "Dorst",
+        "description": "Sterk verlangen om te drinken"
+    },
+    {
+        "name": "Droge mond",
+        "description": "Gebrek aan speeksel, droog gevoel in de mond"
+    },
+    {
+        "name": "Bloeding",
+        "description": "Verlies van bloed, zichtbaar of vermoeden van inwendige bloeding"
+    },
+    {
+        "name": "Hoofdpijn",
+        "description": "Pijn in het hoofdgebied, verschillend van aard"
+    },
+    {
+        "name": "Lage bloeddruk",
+        "description": "Bloeddruk lager dan normaal"
+    },
+    {
+        "name": "Versnelde hartslag",
+        "description": "Hartslag hoger dan 90 slagen per minuut"
+    },
+    {
+        "name": "Buikpijn",
+        "description": "Krampen, scherpe of zeurende pijn in de buik"
+    },
+    {
+        "name": "Pijn in de benen",
+        "description": "Pijn in de onderbenen, bij bewegen of in rust"
+    },
+    {
+        "name": "Hoesten",
+        "description": "Geforceerde uitademing, droog of met slijm"
+    },
+    {
+        "name": "Kortademigheid",
+        "description": "Moeite met ademhalen of gevoel van ademtekort"
+    },
+    {
+        "name": "Bleke huid",
+        "description": "Ongewoon lichte huid, vaak met koud zweet"
+    },
+    {
+        "name": "Zweten",
+        "description": "Overmatig of plotseling transpireren"
+    },
+    {
+        "name": "Gewrichtspijn",
+        "description": "Pijn in de gewrichten, vooral bij beweging"
+    },
+    {
+        "name": "Stijfheid",
+        "description": "Beperkte bewegingsvrijheid na rust, vooral 's ochtends"
+    },
+    {
+        "name": "Bewegingsbeperking",
+        "description": "Verminderd vermogen om gewrichten volledig te bewegen"
+    },
+    {
+        "name": "Zwelling",
+        "description": "Opgezwollen gewrichten, soms met warmte of roodheid"
+    },
+    {
+        "name": "Lage rugpijn",
+        "description": "Pijn in de onderrug, vaak gerelateerd aan degeneratie"
+    }
+]
