@@ -24,4 +24,8 @@ class Symptom extends Model
     {
         return $this->belongsToMany(Scenario::class);
     }
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class, 'patient_symptom');
+    }
 }

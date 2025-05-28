@@ -40,17 +40,12 @@ class PatientController extends Controller
             $json = file_get_contents(public_path('CareskillsAssets/scenarios.json'));
             $patients = json_decode($json, true);
             foreach ($patients as $patient) {
-                foreach ($patient['symptoms'] as $symptomName) {
-                    Symptom::firstOrCreate(['name' => $symptomName]);
-                }
-                Patient::create([
+                $new_patient = Patient::create([
                     'name' => $patient['name'],
                     'surname' => $patient['surname'],
                     'gender' => $patient['gender'],
                     'age' => $patient['age'],
                     'diagnosis_id' => $patient['diagnosis_id'],
-                    'medical_history' => $patient['medical_history'],
-                    'symptoms' => implode(', ', $patient['symptoms']),
                     'weight' => $patient['weight'],
                     'height' => $patient['height'],
                     'allergies' => $patient['allergies'],
@@ -65,6 +60,12 @@ class PatientController extends Controller
                     'oxygen_saturation' => $patient['oxygen_saturation'],
                     'pain' => $patient['pain']
                 ]);
+                if (!empty($patient['symptom_ids'])) {
+                    $new_patient->symptoms()->attach($patient['symptom_ids']);
+                }
+                if (!empty($patient['medical_history'])) {
+                    $new_patient->pastDiagnoses()->attach($patient['medical_history']);
+                }
             }
         }
         public function exportDialoguesToFiles()
@@ -72,7 +73,7 @@ class PatientController extends Controller
             $json = file_get_contents(public_path('CareskillsAssets/scenarios.json'));
             $patients = json_decode($json, true);
 
-            foreach ($patients as &$patient)
+            foreach ($patients as $patient)
             {
                 $name = $patient['name'];
                 $dialogues = $patient['dialogues'] ?? [];
