@@ -1,4 +1,4 @@
-<div class="indicators-container">
+<div class="indicators-container" id="indicators-container">
     <p class="{{ $patient->temperature_c > 37.2 || $patient->temperature_c < 35.0 ? 'text-red-500' : 'text-white' }}">
         Temp: {{ $patient->temperature_c }}°C
     </p>

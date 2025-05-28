@@ -16,7 +16,7 @@
             <span class="tooltip-text">Bloed</span>
         </div>
         <div class="tooltip">
-            <img src="{{ asset('CareskillsAssets/items-icons/Pills.png') }}" alt="Pills">
+            <img src="{{ asset('CareskillsAssets/items-icons/Pills.png') }}" alt="Paracetomol" id="Paracetomol">
             <span class="tooltip-text">Paracetomol</span>
         </div>
 

@@ -15,6 +15,11 @@ const audio = document.getElementById("bg-audio");
 const Audiobutton = document.getElementById("audioButton");
 const volumeSlider = document.getElementById("volumeSlider");
 const BloedAfnemen = document.getElementById("BloedAfnemen");
+const completeBtn = document.getElementById("completeActionBtn");
+const syringe = document.getElementById("hand-with-syringe");
+const ParacetomolGeven= document.getElementById("Paracetomol");
+const Paracetomol= document.getElementById("hand-with-Paracetomol");
+const Indicators = document.getElementById("indicators-container");
 menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("active");
     menu.classList.toggle("show");
@@ -76,20 +81,84 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-if (BloedAfnemen) {
-    BloedAfnemen.addEventListener("click", function () {
 
-        document.body.style.backgroundImage = "url('/CareskillsAssets/backgrounds/BloodOffice.png')";
+function setupCompleteProcedure(delayMs, resetBackground, resetSprite) {
+    setTimeout(() => {
+        if (completeBtn) {
+            completeBtn.style.display = "block";
+        }
+    }, delayMs);
 
- // кнопка которая поялвяеется через время чтобы завершить процедуру        setTimeout(() => {
-            //const completeBtn = document.getElementById("completeActionBtn");
-            //if (completeBtn) {
-                //completeBtn.style.display = "block";
-            //}
-        //}, 6000);
-    });
+    if (resetBackground) {
+        document.body.style.backgroundImage = `url('${resetBackground}')`;
+    }
+    if (resetSprite) {
+        geduldig.src = resetSprite;
+    }
+    itemsBox.style.display = 'none';
+    Indicators.style.display = 'none';
+
+}
+function resetProcedure(standardBackground, standardSprite) {
+    if (completeBtn) {
+        completeBtn.addEventListener("click", () => {
+            completeBtn.style.display = "none";
+
+            if (standardBackground) {
+                document.body.style.backgroundImage = `url('${standardBackground}')`;
+            }
+
+            if (standardSprite) {
+                geduldig.src = standardSprite;
+                dialogueWraper.style.display = 'block';
+                syringe.style.display = 'none';
+                Paracetomol.style.display = 'none';
+                itemsBox.style.display = 'block';
+            }
+        });
+    }
 }
 
+if (BloedAfnemen) {
+    BloedAfnemen.addEventListener("click", () => {
+        setupCompleteProcedure(
+            6000,
+            "/CareskillsAssets/backgrounds/BloodOffice.png",
+            "/CareskillsAssets/characters/Johan/BloedAfnemen.png"
+        );
+        syringe.classList.remove("animate-inject");
+        void syringe.offsetWidth;
+        syringe.classList.add("animate-inject");
+        syringe.style.display = 'flex';
+        dialogueWraper.style.display = 'none';
+
+        resetProcedure(
+            "/CareskillsAssets/backgrounds/Office.png",
+            "/CareskillsAssets/characters/Johan/front.png"
+        );
+    });
+}
+if (ParacetomolGeven) {
+    ParacetomolGeven.addEventListener("click", () => {
+        setupCompleteProcedure(
+            6000,
+            "/CareskillsAssets/backgrounds/Office.png",
+            "/CareskillsAssets/characters/Johan/front.png"
+        );
+
+        Paracetomol.classList.remove("Paracetomol-Geven");
+        void Paracetomol.offsetWidth;
+        Paracetomol.classList.add("Paracetomol-Geven");
+        Paracetomol.style.display = 'flex';
+        dialogueWraper.style.display = 'none';
+        Indicators.style.display = 'flex';
+
+        resetProcedure(
+            "/CareskillsAssets/backgrounds/Office.png",
+            "/CareskillsAssets/characters/Johan/front.png"
+        );
+    });
+}
 document.addEventListener("DOMContentLoaded", function () {
     const answerOptions = document.querySelectorAll(".answer-option");
     const dialogueBox = document.querySelector(".dialogue-box");
@@ -107,4 +176,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 console.log(12313412)
+
 
